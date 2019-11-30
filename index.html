@@ -61,6 +61,59 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-街区最短路径问题" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/11/30/%E8%A1%97%E5%8C%BA%E6%9C%80%E7%9F%AD%E8%B7%AF%E5%BE%84%E9%97%AE%E9%A2%98/" class="article-date">
+  <time datetime="2019-11-30T15:56:19.264Z" itemprop="datePublished">2019-11-30</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/11/30/%E8%A1%97%E5%8C%BA%E6%9C%80%E7%9F%AD%E8%B7%AF%E5%BE%84%E9%97%AE%E9%A2%98/">街区最短路径问题</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="街区最短路径问题"><a href="#街区最短路径问题" class="headerlink" title="街区最短路径问题"></a>街区最短路径问题</h1><p>描述<br>一个街区有很多住户，街区的街道只能为东西、南北两种方向。</p>
+<p>住户只可以沿着街道行走。</p>
+<p>各个街道之间的间隔相等。</p>
+<p>用(x,y)来表示住户坐在的街区。</p>
+<p>例如（4,20），表示用户在东西方向第4个街道，南北方向第20个街道。</p>
+<p>现在要建一个邮局，使得各个住户到邮局的距离之和最少。</p>
+<p>求现在这个邮局应该建在那个地方使得所有住户距离之和最小；</p>
+<p>输入<br>第一行一个整数n&lt;20，表示有n组测试数据，下面是n组数据;<br>每组第一行一个整数m&lt;20,表示本组有m个住户，下面的m行每行有两个整数0&lt;x,y&lt;100，表示某个用户所在街区的坐标。<br>m行后是新一组的数据；</p>
+<p>输出<br>每组数据输出到邮局最小的距离和，回车结束；</p>
+<p>样例输入</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="number">2</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="number">3</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="number">1</span> <span class="number">1</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"><span class="number">2</span> <span class="number">1</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line"><span class="number">1</span> <span class="number">2</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line"><span class="number">5</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line"><span class="number">2</span> <span class="number">9</span> </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line"><span class="number">5</span> <span class="number">20</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line"><span class="number">11</span> <span class="number">9</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line"><span class="number">1</span> <span class="number">1</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line"><span class="number">1</span> <span class="number">20</span></span></pre></td></tr></table></figure>
+
+<p>样例输出</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="number">2</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="number">44</span></span></pre></td></tr></table></figure>
+<p>代码：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;string.h&gt;</span></span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">main()</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">&#123;   <span class="keyword">int</span> x[<span class="number">100</span>],y[<span class="number">100</span>];</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">	<span class="keyword">int</span> n,m,i,j;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;n);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">	<span class="keyword">while</span>(n--)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">	&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">		<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;m);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">		<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;m;i++)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">		<span class="built_in">scanf</span>(<span class="string">"%d %d"</span>,&amp;x[i],&amp;y[i]);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">		<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;m<span class="number">-1</span>;i++)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line">		&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line">			<span class="keyword">for</span>(j=i+<span class="number">1</span>;j&lt;m;j++)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">15</span></pre></td><td class="code"><pre><span class="line">			&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">16</span></pre></td><td class="code"><pre><span class="line">				<span class="keyword">if</span>(x[i]&gt;x[j])</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">17</span></pre></td><td class="code"><pre><span class="line">				&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">18</span></pre></td><td class="code"><pre><span class="line">					x[i]^=x[j];</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">19</span></pre></td><td class="code"><pre><span class="line">                    x[j]^=x[i];</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">20</span></pre></td><td class="code"><pre><span class="line">                    x[i]^=x[j];</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">21</span></pre></td><td class="code"><pre><span class="line">		        &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">22</span></pre></td><td class="code"><pre><span class="line">		        <span class="keyword">if</span>(y[i]&gt;y[j])</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">23</span></pre></td><td class="code"><pre><span class="line">				&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">24</span></pre></td><td class="code"><pre><span class="line">					y[i]^=y[j];</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">25</span></pre></td><td class="code"><pre><span class="line">                    y[j]^=y[i];</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">26</span></pre></td><td class="code"><pre><span class="line">                    y[i]^=y[j];</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">27</span></pre></td><td class="code"><pre><span class="line">		        &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">28</span></pre></td><td class="code"><pre><span class="line">		    &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">29</span></pre></td><td class="code"><pre><span class="line">		&#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">30</span></pre></td><td class="code"><pre><span class="line">		<span class="keyword">int</span> s=<span class="number">0</span>;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">31</span></pre></td><td class="code"><pre><span class="line">		<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;m/<span class="number">2</span>;i++)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">32</span></pre></td><td class="code"><pre><span class="line">		s+=x[m<span class="number">-1</span>-i]-x[i]+y[m<span class="number">-1</span>-i]-y[i];</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">33</span></pre></td><td class="code"><pre><span class="line">		<span class="built_in">printf</span>(<span class="string">"%d\n"</span>,s);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">34</span></pre></td><td class="code"><pre><span class="line">	&#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">35</span></pre></td><td class="code"><pre><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">36</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/11/30/%E8%A1%97%E5%8C%BA%E6%9C%80%E7%9F%AD%E8%B7%AF%E5%BE%84%E9%97%AE%E9%A2%98/" data-id="ck3lrdmlo0000hksobpflgayf" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-韩信点兵" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/11/30/%E9%9F%A9%E4%BF%A1%E7%82%B9%E5%85%B5/" class="article-date">
@@ -502,42 +555,6 @@
 
 
   
-    <article id="post-你好-Hexo" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/11/30/%E4%BD%A0%E5%A5%BD-Hexo/" class="article-date">
-  <time datetime="2019-11-30T14:45:25.000Z" itemprop="datePublished">2019-11-30</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/11/30/%E4%BD%A0%E5%A5%BD-Hexo/">你好,Hexo</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/11/30/%E4%BD%A0%E5%A5%BD-Hexo/" data-id="ck3loux5x0001fcsodixzevi1" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
 
 
   <nav id="page-nav">
@@ -574,6 +591,10 @@
       <ul>
         
           <li>
+            <a href="/2019/11/30/%E8%A1%97%E5%8C%BA%E6%9C%80%E7%9F%AD%E8%B7%AF%E5%BE%84%E9%97%AE%E9%A2%98/">街区最短路径问题</a>
+          </li>
+        
+          <li>
             <a href="/2019/11/30/%E9%9F%A9%E4%BF%A1%E7%82%B9%E5%85%B5/">韩信点兵</a>
           </li>
         
@@ -587,10 +608,6 @@
         
           <li>
             <a href="/2019/11/30/ASCII%E7%A0%81%E6%8E%92%E5%BA%8F/">ASCII码排序</a>
-          </li>
-        
-          <li>
-            <a href="/2019/11/30/%E6%8B%AC%E5%8F%B7%E9%85%8D%E5%AF%B9%E9%97%AE%E9%A2%98/">括号配对问题</a>
           </li>
         
       </ul>
