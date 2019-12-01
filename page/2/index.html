@@ -61,6 +61,46 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-Git学习总结(git的安装与配置）" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/11/30/Git%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93(git%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE%EF%BC%89/" class="article-date">
+  <time datetime="2019-11-30T14:53:36.873Z" itemprop="datePublished">2019-11-30</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/11/30/Git%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93(git%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE%EF%BC%89/">Git学习总结(git的安装与配置）</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Git学习总结-git的安装与配置）"><a href="#Git学习总结-git的安装与配置）" class="headerlink" title="Git学习总结(git的安装与配置）"></a><strong>Git学习总结(git的安装与配置）</strong></h1><p><strong>首先，要想安装git，就得必须拥有一个Github账号：点击进入github的官网<a href="https://github.com/account/unverified-email" target="_blank" rel="noopener">https://github.com/account/unverified-email</a><br>然后开始申请一个github账号，在申请时需要绑定一个邮箱即可（我申请的时候绑定的是qq邮箱），根据个人情况而定。</strong><br>       最早的GIT其实是在lunix上开发的，不过慢慢的有人将它移植到了Windows上，所以现在，git可以在lunix,Unix,Mac和Windows这几大平台上正常运行了。<br>不过因为我的电脑上有lunix的Ubuntu虚拟机，我就在上面直接下载了，接下来开始安装。<br><strong>**第一步：</strong>打开lunix中的Ubuntu,使用快捷键：Ctrl+Alt+T打开终端；**<br>      打开终端有五种方法，这个只是其一，其余四种我列举如下：<br>      1.方法一：直接运行终端的可执行文件。单击ubuntu桌面左侧启动器内部的主文件夹，然后单击文件系统，进入文件系统内部usr文件夹下的bin目录。单击“搜索”标识，在搜索框内输入“<code>gnome-terminal</code>”然后按回车键。在搜索结果中会出现“<code>gnome-terminal</code>”的可执行文件，双击即可打开终端。<br>      2.方法二：通过命令行打开终端。在ubuntu系统中按<code>Alt+F2</code>快捷键打开命令输入框，输入“<code>gnome-terminal</code>”命令，然后按回车键即可打开终端。<br>     3.方法三：Dash主页打开终端。单击Ubuntu桌面左上边的Dash主页图标，在搜索框内输入“ter”,然后在搜索结果内会出现终端的图标即可打开终端。<br>     4.方法四：将终端图标锁定在右侧启动器，直接打开终端。我们可以将终端通过拖拽的方式固定在桌面右侧的启动器上，通过单击启动器上的终端图标即可方便的打开终端。</p>
+<p><strong>第二步：</strong>打开终端后，在命令行模式下输入 sudo apt-get install git  命令进行安装（注意一定要在连网的情况下进行，否则会出现安装出错的问题）<br><strong>第三步</strong>安装完成后进行git配置，输入指令 <code>git config --global user.name&quot;xxx&quot;</code>   和 <code>git config --global user.email &quot;你的邮箱地址&quot;</code><br><strong>第四步</strong>配置完成后，需要创建验证用的公钥，因为git是通过ssh的方式访问资源库的，所以需要在本地创建验证用的文件。使用命令<br><code>ssh-keygen -C  &#39;you email address@gmail.com&#39; -t  rsa</code> (注意<code>ssh</code>与<code>-keygen</code>之间没有空格），会在用户目录下建立相应的密钥文件。<br><strong>第五步</strong>创建完公钥后，需要上传。使用命令<code>cd ~/.ssh</code>进入<code>~/.ssh</code>文件夹，输入<code>gedit id_rsa.pub</code>打开<code>id_rsa.pub</code>文件，复制其中所有内容。接着访问</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">http://git.oschina.net/profile</span></pre></td></tr></table></figure>
+<p>这个网页，点击<code>SSH公钥</code>，标题栏可以随意输入，公钥栏把你刚才复制的内容粘贴上去就OK了。<br><strong>第六步</strong>测试连接是否畅通：<code>ssh -T git@git.oschina.net</code><br>接下来的内容就和在Windows下使用git上传一样了，先自己创建一个文件夹，将敲的代码拷贝进去，先使用 <code>git init</code>指令初始化一个git仓库，接着输入 <code>git add.</code>添加文件，输入 <code>git commit -m</code> “注释”提交至仓库。<br>输入<code>git remote add origin https://git.oschina.net/你的用户名/项目名.git</code>,<code>git push origin master</code> 即可完成推送。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/11/30/Git%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93(git%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE%EF%BC%89/" data-id="ck3lp5rv2000094so9oom8p6n" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-多边形重心问题" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/11/30/%E5%A4%9A%E8%BE%B9%E5%BD%A2%E9%87%8D%E5%BF%83%E9%97%AE%E9%A2%98/" class="article-date">
@@ -243,6 +283,10 @@
       <ul>
         
           <li>
+            <a href="/2019/12/01/%E4%B8%80%E7%A7%8D%E6%8E%92%E5%BA%8F/">一种排序</a>
+          </li>
+        
+          <li>
             <a href="/2019/12/01/%E6%B0%B4%E4%BB%99%E8%8A%B1%E6%95%B0/">水仙花数</a>
           </li>
         
@@ -256,10 +300,6 @@
         
           <li>
             <a href="/2019/11/30/%E5%A5%87%E5%81%B6%E6%95%B0%E5%88%86%E7%A6%BB/">奇偶数分离</a>
-          </li>
-        
-          <li>
-            <a href="/2019/11/30/%E5%96%B7%E6%B0%B4%E8%A3%85%E7%BD%AE%EF%BC%88%E4%B8%80%EF%BC%89/">喷水装置（一）</a>
           </li>
         
       </ul>

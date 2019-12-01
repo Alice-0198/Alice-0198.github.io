@@ -61,6 +61,56 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-一种排序" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/12/01/%E4%B8%80%E7%A7%8D%E6%8E%92%E5%BA%8F/" class="article-date">
+  <time datetime="2019-12-01T00:20:42.715Z" itemprop="datePublished">2019-12-01</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/12/01/%E4%B8%80%E7%A7%8D%E6%8E%92%E5%BA%8F/">一种排序</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="一种排序"><a href="#一种排序" class="headerlink" title="一种排序"></a>一种排序</h1><h2 id="描述"><a href="#描述" class="headerlink" title="描述"></a>描述</h2><p>现在有很多长方形，每一个长方形都有一个编号，这个编号可以重复；还知道这个长方形的宽和长，编号、长、宽都是整数；现在要求按照一下方式排序（默认排序规则都是从小到大）；</p>
+<p>1.按照编号从小到大排序</p>
+<p>2.对于编号相等的长方形，按照长方形的长排序；</p>
+<p>3.如果编号和长都相同，按照长方形的宽排序；</p>
+<p>4.如果编号、长、宽都相同，就只保留一个长方形用于排序,删除多余的长方形；最后排好序按照指定格式显示所有的长方形；</p>
+<h2 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h2><p>第一行有一个整数 0&lt;n&lt;10000,表示接下来有n组测试数据；<br>每一组第一行有一个整数 0&lt;m&lt;1000，表示有m个长方形；<br>接下来的m行，每一行有三个数 ，第一个数表示长方形的编号，</p>
+<p>第二个和第三个数值大的表示长，数值小的表示宽，相等<br>说明这是一个正方形（数据约定长宽与编号都小于10000）；</p>
+<h2 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h2><p>顺序输出每组数据的所有符合条件的长方形的 编号 长 宽</p>
+<h2 id="样例输入"><a href="#样例输入" class="headerlink" title="样例输入"></a>样例输入</h2><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="number">1</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="number">8</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="number">1</span> <span class="number">1</span> <span class="number">1</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"><span class="number">1</span> <span class="number">1</span> <span class="number">1</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line"><span class="number">1</span> <span class="number">1</span> <span class="number">2</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line"><span class="number">1</span> <span class="number">2</span> <span class="number">1</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line"><span class="number">1</span> <span class="number">2</span> <span class="number">2</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line"><span class="number">2</span> <span class="number">1</span> <span class="number">1</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line"><span class="number">2</span> <span class="number">1</span> <span class="number">2</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line"><span class="number">2</span> <span class="number">2</span> <span class="number">1</span></span></pre></td></tr></table></figure>
+
+<h2 id="样例输出"><a href="#样例输出" class="headerlink" title="样例输出"></a>样例输出</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="number">1</span> <span class="number">1</span> <span class="number">1</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="number">1</span> <span class="number">2</span> <span class="number">1</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="number">1</span> <span class="number">2</span> <span class="number">2</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"><span class="number">2</span> <span class="number">1</span> <span class="number">1</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line"><span class="number">2</span> <span class="number">2</span> <span class="number">1</span></span></pre></td></tr></table></figure>
+<p>代码：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> N 1001</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a[N][<span class="number">3</span>];</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line"><span class="function"></span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">	<span class="keyword">int</span> n,m;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">	<span class="keyword">int</span> i,j,t; </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;n);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">	<span class="keyword">while</span>(n--)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">	&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">		<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;m);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">		<span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=m;i++)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line">		&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line">			<span class="built_in">scanf</span>(<span class="string">"%d %d %d"</span>,&amp;a[i][<span class="number">0</span>],&amp;a[i][<span class="number">1</span>],&amp;a[i][<span class="number">2</span>]);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">15</span></pre></td><td class="code"><pre><span class="line">			<span class="keyword">if</span>(a[i][<span class="number">1</span>]&lt;a[i][<span class="number">2</span>]) </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">16</span></pre></td><td class="code"><pre><span class="line">			 &#123; </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">17</span></pre></td><td class="code"><pre><span class="line">			    t=a[i][<span class="number">1</span>];</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">18</span></pre></td><td class="code"><pre><span class="line">				a[i][<span class="number">1</span>]=a[i][<span class="number">2</span>];</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">19</span></pre></td><td class="code"><pre><span class="line">				a[i][<span class="number">2</span>]=t;&#125; 	</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">20</span></pre></td><td class="code"><pre><span class="line">		&#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">21</span></pre></td><td class="code"><pre><span class="line">		<span class="keyword">for</span>(i=<span class="number">2</span>;i&lt;=m;i++)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">22</span></pre></td><td class="code"><pre><span class="line">		&#123;		</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">23</span></pre></td><td class="code"><pre><span class="line">			<span class="keyword">for</span>(j=<span class="number">1</span>;j&lt;i;j++)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">24</span></pre></td><td class="code"><pre><span class="line">			&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">25</span></pre></td><td class="code"><pre><span class="line">				<span class="keyword">if</span>(a[i][<span class="number">0</span>]==a[j][<span class="number">0</span>] &amp;&amp; a[i][<span class="number">1</span>]==a[j][<span class="number">1</span>] &amp;&amp; a[i][<span class="number">2</span>]==a[j][<span class="number">2</span>])</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">26</span></pre></td><td class="code"><pre><span class="line">				&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">27</span></pre></td><td class="code"><pre><span class="line">				a[i][<span class="number">0</span>]=a[m][<span class="number">0</span>]; </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">28</span></pre></td><td class="code"><pre><span class="line">				a[i][<span class="number">1</span>]=a[m][<span class="number">1</span>]; </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">29</span></pre></td><td class="code"><pre><span class="line">				a[i][<span class="number">2</span>]=a[m][<span class="number">2</span>]; </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">30</span></pre></td><td class="code"><pre><span class="line">				m--; </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">31</span></pre></td><td class="code"><pre><span class="line">				i--;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">32</span></pre></td><td class="code"><pre><span class="line">			    <span class="keyword">break</span>;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">33</span></pre></td><td class="code"><pre><span class="line">				&#125;  </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">34</span></pre></td><td class="code"><pre><span class="line">			&#125; </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">35</span></pre></td><td class="code"><pre><span class="line">		&#125;	</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">36</span></pre></td><td class="code"><pre><span class="line">					</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">37</span></pre></td><td class="code"><pre><span class="line"> </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">38</span></pre></td><td class="code"><pre><span class="line">		<span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=m;i++)&#123;		</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">39</span></pre></td><td class="code"><pre><span class="line">			<span class="keyword">for</span>(j=m;j&gt;i;j--)&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">40</span></pre></td><td class="code"><pre><span class="line">				<span class="keyword">if</span>(a[j][<span class="number">0</span>]&lt;a[i][<span class="number">0</span>] || (a[j][<span class="number">0</span>]==a[i][<span class="number">0</span>]&amp;&amp;a[j][<span class="number">1</span>]&lt;a[i][<span class="number">1</span>]) || (a[j][<span class="number">0</span>]==a[i][<span class="number">0</span>] &amp;&amp; a[j][<span class="number">1</span>]==a[i][<span class="number">1</span>] &amp;&amp; a[j][<span class="number">2</span>]&lt;a[i][<span class="number">2</span>]) )</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">41</span></pre></td><td class="code"><pre><span class="line">					&#123; </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">42</span></pre></td><td class="code"><pre><span class="line">					  t=a[i][<span class="number">0</span>];</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">43</span></pre></td><td class="code"><pre><span class="line">					  a[i][<span class="number">0</span>]=a[j][<span class="number">0</span>];</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">44</span></pre></td><td class="code"><pre><span class="line">					  a[j][<span class="number">0</span>]=t;  </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">45</span></pre></td><td class="code"><pre><span class="line">					  t=a[i][<span class="number">1</span>];</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">46</span></pre></td><td class="code"><pre><span class="line">					  a[i][<span class="number">1</span>]=a[j][<span class="number">1</span>];</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">47</span></pre></td><td class="code"><pre><span class="line">					  a[j][<span class="number">1</span>]=t;  </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">48</span></pre></td><td class="code"><pre><span class="line">					  t=a[i][<span class="number">2</span>];</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">49</span></pre></td><td class="code"><pre><span class="line">					  a[i][<span class="number">2</span>]=a[j][<span class="number">2</span>];</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">50</span></pre></td><td class="code"><pre><span class="line">					  a[j][<span class="number">2</span>]=t;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">51</span></pre></td><td class="code"><pre><span class="line">					&#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">52</span></pre></td><td class="code"><pre><span class="line">			&#125; </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">53</span></pre></td><td class="code"><pre><span class="line">		&#125; </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">54</span></pre></td><td class="code"><pre><span class="line">		<span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=m;i++)		</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">55</span></pre></td><td class="code"><pre><span class="line">			<span class="built_in">printf</span>(<span class="string">"%d %d %d\n"</span>,a[i][<span class="number">0</span>],a[i][<span class="number">1</span>],a[i][<span class="number">2</span>]);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">56</span></pre></td><td class="code"><pre><span class="line">	&#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">57</span></pre></td><td class="code"><pre><span class="line">	</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">58</span></pre></td><td class="code"><pre><span class="line">	<span class="keyword">return</span> <span class="number">0</span>; </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">59</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/12/01/%E4%B8%80%E7%A7%8D%E6%8E%92%E5%BA%8F/" data-id="ck3m9eccb0000msso463zdsdb" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-水仙花数" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/12/01/%E6%B0%B4%E4%BB%99%E8%8A%B1%E6%95%B0/" class="article-date">
@@ -501,46 +551,6 @@
 
 
   
-    <article id="post-Git学习总结(git的安装与配置）" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/11/30/Git%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93(git%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE%EF%BC%89/" class="article-date">
-  <time datetime="2019-11-30T14:53:36.873Z" itemprop="datePublished">2019-11-30</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/11/30/Git%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93(git%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE%EF%BC%89/">Git学习总结(git的安装与配置）</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="Git学习总结-git的安装与配置）"><a href="#Git学习总结-git的安装与配置）" class="headerlink" title="Git学习总结(git的安装与配置）"></a><strong>Git学习总结(git的安装与配置）</strong></h1><p><strong>首先，要想安装git，就得必须拥有一个Github账号：点击进入github的官网<a href="https://github.com/account/unverified-email" target="_blank" rel="noopener">https://github.com/account/unverified-email</a><br>然后开始申请一个github账号，在申请时需要绑定一个邮箱即可（我申请的时候绑定的是qq邮箱），根据个人情况而定。</strong><br>       最早的GIT其实是在lunix上开发的，不过慢慢的有人将它移植到了Windows上，所以现在，git可以在lunix,Unix,Mac和Windows这几大平台上正常运行了。<br>不过因为我的电脑上有lunix的Ubuntu虚拟机，我就在上面直接下载了，接下来开始安装。<br><strong>**第一步：</strong>打开lunix中的Ubuntu,使用快捷键：Ctrl+Alt+T打开终端；**<br>      打开终端有五种方法，这个只是其一，其余四种我列举如下：<br>      1.方法一：直接运行终端的可执行文件。单击ubuntu桌面左侧启动器内部的主文件夹，然后单击文件系统，进入文件系统内部usr文件夹下的bin目录。单击“搜索”标识，在搜索框内输入“<code>gnome-terminal</code>”然后按回车键。在搜索结果中会出现“<code>gnome-terminal</code>”的可执行文件，双击即可打开终端。<br>      2.方法二：通过命令行打开终端。在ubuntu系统中按<code>Alt+F2</code>快捷键打开命令输入框，输入“<code>gnome-terminal</code>”命令，然后按回车键即可打开终端。<br>     3.方法三：Dash主页打开终端。单击Ubuntu桌面左上边的Dash主页图标，在搜索框内输入“ter”,然后在搜索结果内会出现终端的图标即可打开终端。<br>     4.方法四：将终端图标锁定在右侧启动器，直接打开终端。我们可以将终端通过拖拽的方式固定在桌面右侧的启动器上，通过单击启动器上的终端图标即可方便的打开终端。</p>
-<p><strong>第二步：</strong>打开终端后，在命令行模式下输入 sudo apt-get install git  命令进行安装（注意一定要在连网的情况下进行，否则会出现安装出错的问题）<br><strong>第三步</strong>安装完成后进行git配置，输入指令 <code>git config --global user.name&quot;xxx&quot;</code>   和 <code>git config --global user.email &quot;你的邮箱地址&quot;</code><br><strong>第四步</strong>配置完成后，需要创建验证用的公钥，因为git是通过ssh的方式访问资源库的，所以需要在本地创建验证用的文件。使用命令<br><code>ssh-keygen -C  &#39;you email address@gmail.com&#39; -t  rsa</code> (注意<code>ssh</code>与<code>-keygen</code>之间没有空格），会在用户目录下建立相应的密钥文件。<br><strong>第五步</strong>创建完公钥后，需要上传。使用命令<code>cd ~/.ssh</code>进入<code>~/.ssh</code>文件夹，输入<code>gedit id_rsa.pub</code>打开<code>id_rsa.pub</code>文件，复制其中所有内容。接着访问</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">http://git.oschina.net/profile</span></pre></td></tr></table></figure>
-<p>这个网页，点击<code>SSH公钥</code>，标题栏可以随意输入，公钥栏把你刚才复制的内容粘贴上去就OK了。<br><strong>第六步</strong>测试连接是否畅通：<code>ssh -T git@git.oschina.net</code><br>接下来的内容就和在Windows下使用git上传一样了，先自己创建一个文件夹，将敲的代码拷贝进去，先使用 <code>git init</code>指令初始化一个git仓库，接着输入 <code>git add.</code>添加文件，输入 <code>git commit -m</code> “注释”提交至仓库。<br>输入<code>git remote add origin https://git.oschina.net/你的用户名/项目名.git</code>,<code>git push origin master</code> 即可完成推送。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/11/30/Git%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93(git%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE%EF%BC%89/" data-id="ck3lp5rv2000094so9oom8p6n" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
 
 
   <nav id="page-nav">
@@ -577,6 +587,10 @@
       <ul>
         
           <li>
+            <a href="/2019/12/01/%E4%B8%80%E7%A7%8D%E6%8E%92%E5%BA%8F/">一种排序</a>
+          </li>
+        
+          <li>
             <a href="/2019/12/01/%E6%B0%B4%E4%BB%99%E8%8A%B1%E6%95%B0/">水仙花数</a>
           </li>
         
@@ -590,10 +604,6 @@
         
           <li>
             <a href="/2019/11/30/%E5%A5%87%E5%81%B6%E6%95%B0%E5%88%86%E7%A6%BB/">奇偶数分离</a>
-          </li>
-        
-          <li>
-            <a href="/2019/11/30/%E5%96%B7%E6%B0%B4%E8%A3%85%E7%BD%AE%EF%BC%88%E4%B8%80%EF%BC%89/">喷水装置（一）</a>
           </li>
         
       </ul>
